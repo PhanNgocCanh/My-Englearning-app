@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import './index.css';
+import 'react-toastify/dist/ReactToastify.css';
+import GlobalStyle from './components/GlobalStyle';
 import reportWebVitals from './reportWebVitals';
+import { StyledEngineProvider } from '@mui/material';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.Fragment>
+        <StyledEngineProvider>
+            <GlobalStyle>
+                <App />
+            </GlobalStyle>
+        </StyledEngineProvider>
+    </React.Fragment>,
 );
 
 // If you want to start measuring performance in your app, pass a function
